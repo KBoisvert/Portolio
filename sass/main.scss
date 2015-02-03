@@ -1,0 +1,479 @@
+// sass par Karine Boisvert 
+
+/*  Fait pour le mobile first, les valeurs par défaut sont basées sur un max-width de 320px
+les medias query à la fin du code ajuste le contenu selon la largeur de l'écran */
+
+// variables
+
+$font : 'Lato', sans-serif;
+$fontsize:1em;
+$mainColor : #ff3d00;  //red darken-4 b71c1c
+$lineheight: 1rem;
+$sidenav-width: 200px;
+$grispale:#eeeeee;
+
+
+/* --------------------- mixins ------------------- */
+
+/* fonts */
+
+@mixin fonth1{
+	font-size:$fontsize*4.2;
+	line-height:$lineheight*4.62;
+}
+@mixin fonth2{
+	font-size:$fontsize*3.56;
+	line-height:$lineheight*3.91;
+}
+@mixin fonth3{
+	font-size:$fontsize*2.9;
+	line-height:$lineheight*3.21;
+}
+@mixin fonth4{
+	font-size:$fontsize*2.28;
+	line-height:$lineheight*2.5;
+}
+@mixin fonth5{
+	font-size:$fontsize*1.64;
+	line-height:$lineheight*1.8;
+}
+@mixin fonth6{
+	font-size:$fontsize*1.1;
+	line-height:$lineheight*1.4;
+}
+
+
+/*  autres  */
+
+@mixin backgroundImg{
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
+}
+
+@mixin resetmarpad{
+	margin:0;
+	padding:0;
+}
+
+@mixin sectionspace{
+	margin:10px 0;
+	padding:10px 0;
+}
+
+/* ------------------  balise de base html  ----------------- */
+
+/*  fonts */
+
+ h1{
+	font-weight:300;  //light
+	@include resetmarpad;
+	@include fonth4;
+}
+h2{
+	font-weight:300;  //light
+	@include resetmarpad;
+	@include fonth5;
+}
+h3{
+	font-weight:400;  //normal
+	margin-top:50px;
+	@include fonth5;
+}
+h4{
+	font-weight:400;  //normal
+	@include resetmarpad;
+	@include fonth6;
+}
+
+p{
+	font-weight:400;  //normal
+	@include resetmarpad;
+	@include fonth6;
+}
+
+
+body{
+	font-family : $font;
+}
+
+i{
+	color:$mainColor;
+
+}
+form{
+	padding-top:10px;
+}
+
+
+section:not(#menu, #accueil){
+	height:100%;
+	padding:10px 0;
+	@include sectionspace;
+}
+nav{
+	background-color:transparent;
+}
+
+
+li{
+	padding:5px 0;
+	@include fonth6;
+}
+
+footer{
+	background-color:white;
+}
+
+/* ---------------- classes generales ------------------- */
+
+.divider{
+	margin:15px auto 20px auto;
+	width:30%;
+}
+/* menu navigation */
+
+.button-collapse{
+	position:fixed;
+	top:10px;
+	left:5%;
+	z-index:10;
+}
+
+.mdi-navigation-menu{
+	color : black;
+}
+.menutxt{
+	position:absolute;
+	color:white;
+	left:10%;
+	top:20px;
+	z-index:20;
+}
+
+#nav-mobile a{
+
+}
+
+a.scroll{
+	padding:20px 10px 10px 10px;
+	color:white;
+}
+
+/* backgrounds */
+.paralaccueil
+{
+	@include backgroundImg;
+	background-image: url('../img/320downaccueil.jpg');
+}
+
+.bgpresentation{
+	@include backgroundImg;
+	//background-image: url("../img/accueil_bg.jpg"); 
+	height:100%;
+	width:auto;
+	background-color:$grispale;
+	padding: 0;
+	margin-top:40px;
+
+}
+
+.bgweb{
+	@include backgroundImg;
+	background-image: url("../img/web.jpg"); 
+	//background-color:$grispale;
+	height:50%;
+	background-attachment: local;
+}
+.bggeo{
+	@include backgroundImg;
+	background-image: url("../img/web.jpg"); 
+	//background-color:$grispale;
+	height:50%;
+	background-attachment: local;
+}
+.competence{
+	@include backgroundImg;
+	//background-image: url("../img/competences_@2X_gris.jpg"); 
+	height:100%;
+	width:auto;
+	//background-color:$grispale;
+	padding:0;
+}
+.bgportfolio{
+	@include backgroundImg;
+	//background-image: url("../img/bgportfolio_@2X.png"); 
+	height:100%;
+	width:auto;
+	background-color:$grispale;
+	padding:50px 10%; 
+}
+.bgcontact{
+	@include backgroundImg;
+	//background-image: url("../img/contact_@2X_gris.jpg"); 
+	height:100%;
+	width:auto;
+	background-color:$grispale;
+	padding-bottom:20px;
+}
+
+
+/* accueil */
+
+
+
+h1.titreAccueil{
+	padding-top:100px;
+	margin:0;
+	color:$mainColor;
+}
+h2.txtAccueil1{
+	margin:0;
+	padding-top:20px;
+	padding-bottom:10;
+}
+h2.txtAccueil2{
+	padding-top:5px;
+	padding-bottom:370px;
+}
+
+
+
+/* presentation */
+
+.categorie h3{
+	margin:0 0 50px 0;
+}
+.categorie.btn-flat{
+	width:100%;
+	height:100%;
+	border:none;
+	text-transform:none;
+	padding-top:30px;
+}
+.categorie.btn-flat i{
+	font-size:4rem;
+	padding:5%;
+}
+.categorie:hover{
+	background-color:rgba(255,61,0,0.2);
+}
+
+.competence ul{
+	margin:0;
+}
+.competence ul li{
+	padding:5px 0;
+	font-size:$fontsize*1.2;
+}
+
+
+/* portfolio */
+
+#Container .mix{  // pour ne pas montrer les documents des autres classes non sélectionnées
+	display: none;
+}
+
+
+.card-content{
+	height:100%;
+}
+
+span.card-title{
+	font-size:$fontsize*1.2 !important;
+	font-weight:400 !important;
+}
+
+.card .card-reveal{
+	opacity:0.9;
+	background-color:white;
+}
+
+
+/* contacts */
+.signature{
+	font-size:$fontsize;
+}
+.btn-flat{
+	border-style:solid;
+	border-width:1px;
+	border-color:#bdbdbd;
+	margin:0 auto;
+	width:150px;
+}
+section#portfolio h4{
+	margin-bottom:50px;
+}
+
+
+/*******************************************************/
+
+/************css pour tablette et ordinateur ***********/
+
+/*******************************************************/
+
+
+
+$break-sphone: 320px;
+$break-mphone: 480px;
+$break-tablet: 600px;
+$break-lscreen:992px;
+
+
+@media screen and (max-width: $break-sphone) {  
+
+ul.side-nav{
+	width: $sidenav-width;
+}
+
+ul.side-nav li{
+	width: $sidenav-width;
+}
+}
+
+@media screen and (min-width: $break-sphone) {
+
+	.paralaccueil
+	{
+		@include backgroundImg;
+		background-image: url('../img/320_480accueil.jpg');
+	}
+	h2.txtAccueil2{
+		padding-top:5px;
+		padding-bottom:470px;
+	}
+	.titreAccueil{
+		padding-top:15px;
+	}
+
+}
+
+@media screen and (min-width: $break-mphone) {
+	.paralaccueil
+	{
+		@include backgroundImg;
+		background-image: url('../img/480_600accueil.jpg');
+	}
+
+	.titreAccueil{
+		padding-top:50px;
+	}
+	h2.txtAccueil2{
+		padding-top:5px;
+		padding-bottom:550px;
+	}
+	.divider{
+	margin:15px auto 30px auto;
+	width:30%;
+}
+}
+
+@media screen and (min-width: $break-tablet) {
+
+	.paralaccueil
+	{
+		@include backgroundImg;
+		background-image: url('../img/600_992accueil.jpg');
+		margin-bottom:40px;
+	}
+
+.bgpresentation{
+	margin-top:50px;
+}
+.bgportfolio{
+	padding:0;
+	margin-top:10px;
+}
+.competence{
+	padding:0;
+}
+.bgcontact{
+	margin-top:20px;
+}
+
+
+ h1{
+	font-weight:400;  //light
+	@include resetmarpad;
+	@include fonth2;
+}
+h2{
+	font-weight:300;  //light
+	@include resetmarpad;
+	@include fonth3;
+}
+h3{
+	font-weight:400;  //normal
+	margin:40px 0 10px 0;
+	@include fonth4;
+}
+h4{
+	font-weight:400;  //normal
+	@include resetmarpad;
+	@include fonth5;
+}
+h5{
+	font-weight:400;  //normal
+	@include resetmarpad;
+	@include fonth6;
+}
+
+p{
+	font-weight:400;  //normal
+	@include resetmarpad;
+	@include fonth6;
+}
+
+	
+	.titreAccueil{
+		padding-top:70px;
+	}
+	h2.txtAccueil2{
+		padding-top:5px;
+		padding-bottom:500px;
+	}
+}
+
+@media screen and (min-width: $break-lscreen) {
+
+	.paralaccueil
+	{
+		@include backgroundImg;
+		background-image: url('../img/992upaccueil.jpg');
+
+	}
+
+	.titreAccueil{
+		padding-top:110px;
+	}
+	h2.txtAccueil2{
+		padding-top:5px;
+		padding-bottom:300px;
+	}
+}
+
+
+/* ----------------------------- */
+
+
+
+
+
+.paralcompetences
+{
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-image: url('../img/992upaccueil.jpg');
+	overflow: hidden;
+}
+
